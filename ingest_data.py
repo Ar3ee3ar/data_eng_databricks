@@ -26,7 +26,8 @@ def extract_transform_function():
     # Get the day before yesterday's date
 
     # Initialize the News API client with an API key
-    newsapi = NewsApiClient(api_key='ff4373852c2343a98303951439854f8c')
+    api_key = os.getenv('API_KEY')
+    newsapi = NewsApiClient(api_key=api_key)
 
     # Get top headlines for the entertainment category in English, with a page size of 90
     top_headlines = newsapi.get_top_headlines(   
